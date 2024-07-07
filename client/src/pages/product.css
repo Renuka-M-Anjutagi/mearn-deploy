@@ -1,0 +1,189 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
+h1{
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Source Serif Pro', serif;
+}
+
+.buttons{
+    font-size: 22px;
+  
+}
+
+.fa:hover{
+    color: darkcyan;
+}
+
+.container{
+  display: flex;
+  flex-flow: column nowrap;
+ 
+}
+/*CSS Grid*/
+.section-grid{
+   display: flex; 
+   padding-left: 25px;
+   padding-right: 25px;
+}
+.category
+{
+  margin-left: 200px;
+  height: 45px;
+  background-color: transparent;
+  border-radius: 0px;
+}
+.categorylist{
+  height: 50px;
+
+}
+.grid-prod{
+  flex: 1 1 auto;
+  display: flex; 
+  flex-flow: row wrap;  
+}
+
+.prod-grid{
+  flex: 1 1 25%;
+  margin:2%;
+  padding:12px;
+  border: 2px solid #000;
+}
+
+.prod-grid img{
+  width:100%;
+}
+h3, p{
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.btn{
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--bs-heading-color);
+    font-size: 22px;
+    width: 200px;
+    height: 40px;
+    position: right;
+    margin: 10px; 
+    letter-spacing: 1px;
+    display: inline-block;
+}
+.btn:hover{
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--bs-heading-color);
+    font-size: 22px;
+    width: 200px;
+    height: 50px;
+    position: right;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+button{
+  float: right;
+}
+
+/*CSS List*/
+.section-list{
+   display: flex; 
+   padding: 2% 4%; 
+}
+table {
+  width: 100%;
+  margin: 10px 10px;
+  border:2px solid #000;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table tr td {
+  padding: 10px;
+  border-top: 2px solid #000;
+}
+tr td img{
+  width:100%;
+}
+.btn-list{
+    background: darkcyan;
+    border: 1px solid darkcyan;
+    border-radius: 6px;
+    color: white;
+    font-size: 22px;
+    width: 200px;
+    height: 40px;
+    position: right;
+    margin: 10px; 
+    margin-top: 10%;
+    letter-spacing: 1px;
+    display: inline-block;
+    
+}
+.btn-list:hover{
+    background-color: white !important;
+    border: 2px solid white;
+    
+    color: darkcyan;
+
+}
+
+@media (min-width : 320px) and (max-width : 480px) { 
+  .section-list, .buttons{
+    display: none;
+  }
+}
+.dropdown-menu{
+
+  background-color: white !important;
+  margin: 0px;
+  border-radius: 0px  !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* sidebar css */
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+ /* background-color: green;*/
+  color: black;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
