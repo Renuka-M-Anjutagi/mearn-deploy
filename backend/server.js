@@ -9,7 +9,7 @@ import cors from 'cors';
 
 // middleware
 const corsOptions = {
-    origin: "http://localhost:3000" // frontend URI (ReactJS)
+    origin: "https://mearn-deploy.onrender.com/" // frontend URI (ReactJS)
 }
 
 dotenv.config()

@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
-    const url='http://localhost:8080/api/v1/auth/login';
+    const url='https://mearn-deploy.onrender.com/api/v1/auth/login';
     try {
     const res = await axios.post(url, {email, password})
     console.log(res.data);

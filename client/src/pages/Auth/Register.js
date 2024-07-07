@@ -16,7 +16,7 @@ const navigate = useNavigate();
 const handleSubmit = async (e) => {
 e.preventDefault();
 console.log(name, email, password, address, phone);
-const url='http://localhost:8080/api/v1/auth/Register';
+const url='https://mearn-deploy.onrender.com/api/v1/auth/Register';
 try {
 const res = await axios.post(url, {name, email, password, address, phone})
 console.log(res.data);
