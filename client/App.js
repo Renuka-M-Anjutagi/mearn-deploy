@@ -1,19 +1,19 @@
 import{ Routes,Route} from 'react-router-dom';
 import './App.css';
 
-import HomePage from '../pages/HomePage';
-import About from '../pages/About';
-import Policy from '../pages/Policy';
-import Pagenotfound from '../pages/Pagenotfound';
-import Contact from '../pages/Contact';
-import Register from '../pages/Auth/Register';
-import Login from '../pages/Auth/Login';
-import Dashborad from '../pages/Auth/Dashborad';
-import Reset from '../pages/Auth/Reset';
-import ResetNewPassword from '../src/components/layout/ResetNewPassword';
-import Category from '../pages/Category';
+import HomePage from '../client/src/pages/HomePage';
+import About from '../client/src/pages/About';
+import Policy from '../client/src/pages/Policy';
+import Pagenotfound from '../client/src/pages/Pagenotfound';
+import Contact from '../client/src/pages/Contact';
+import Register from '../client/src/pages/Auth/Register';
+import Login from '../client/src/pages/Auth/Login';
+import Dashborad from '../client/src/pages/Auth/Dashborad';
+import Reset from '../client/src/pages/Auth/Reset';
+import ResetNewPassword from '../client/src/pages/Auth/ResetNewPassword';
+import Category from '../client/src/pages/Category';
 
-import ProductGrid from './pages/ProductGrid';
+import ProductGrid from '../client/src/pages/ProductGrid';
 
 function App() {
   return (

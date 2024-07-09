@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
-    const url='https://mearn-deploy.onrender.com/api/v1/auth/login';
+    const url='http://localhost:8080/api/v1/auth/login';
     try {
     const res = await axios.post(url, {email, password})
     console.log(res.data);
@@ -55,7 +55,7 @@ const Login = () => {
                     <span className="text-subdued">Don't have an account?</span>
                     <a href="/register" className="link-faded">Sign up</a>
                   </div>
-          <Link to="/login/Reset">Forgot password?</Link>
+          <Link to="/login/reset">Forgot password?</Link>
     </form>
     </div>
 

@@ -6,14 +6,16 @@ require("dotenv").config();
 
 // middleware
 const corsOptions = {
-    origin: "https://mearn-deploy.onrender.com/" // frontend URI (ReactJS)
+   // origin: "https://mearn-deploy.onrender.com/" // frontend URI (ReactJS)
+
+    origin: "http://localhost:8080"
 }
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 // connect MongoDB
 mongoose.connect(process.env.MONGO_URI).then(() => {
-    const PORT = process.env.PORT || 8000
+    const PORT = process.env.PORT || 8080 || process.env.SERVER_APP_API;
     app.listen(PORT, () => {
         console.log(`App is Listening on PORT ${PORT}`);
     })

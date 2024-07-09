@@ -9,11 +9,12 @@ import cors from 'cors';
 
 // middleware
 const corsOptions = {
-    origin: "https://mearn-deploy.onrender.com/" // frontend URI (ReactJS)
+   // origin: "https://mearn-deploy.onrender.com/" // frontend URI (ReactJS)
+     origin: "http://localhost:3000"
 }
 
 dotenv.config()
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(express.json());
 app.use(morgan('dev'));
 

@@ -4,12 +4,12 @@ import JWT from  'jsonwebtoken';
 export const registerController = async(req, res) =>{
 try {
     
-    const {name, email, password, phone, address} = req.body;
+    const {name,lname, email, password} = req.body;
    if(!name) return res.send({error: 'Name is missing'});
+   if(!lname) return res.send({error: 'Last Name is missing'});
    if(!email) return res.send({error: 'email is missing'});
    if(!password) return res.send({error: 'password is missing'});
-   if(!phone) return res.send({error: 'phone is missing'});
-   if(!address) return res.send({error: 'address is missing'});
+  
 
    const existinguser = await userModel.findOne({email});
    if(existinguser) 
@@ -24,7 +24,7 @@ try {
    }
 
    const hashedPassword = await hashPassword(password);
-   const user = await new userModel({name, email, phone, address, password: hashedPassword}).save();
+   const user = await new userModel({name, lname, email,  password: hashedPassword}).save();
    res.status(201).send({
     success: true,
     message: 'User regisrted success',
@@ -63,7 +63,7 @@ const token = JWT.sign({_id: user._id}, process.env.JWT_SECRET, {
 res.status(200).send({
     success: true,
     message: 'login Success',
-    user:{name : user.name, email: user.email, phone: user.phone, address:user.address},
+    user:{name : user.name,lname : user.lname, email: user.email},
     token
 })
 } catch (error) {

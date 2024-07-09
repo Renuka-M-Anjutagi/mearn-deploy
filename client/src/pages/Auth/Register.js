@@ -6,19 +6,20 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 const [name, setName] = useState(" ");
+const [lname, setLname] = useState(" ");
 const [email, setEmail] = useState(" ")
 const [password, setpassword] = useState(" ")
-const [phone, setphone] = useState(" ")
-const [address, setaddress] = useState(" ")
+
 const navigate = useNavigate();
 // handleSubmit
 
 const handleSubmit = async (e) => {
 e.preventDefault();
-console.log(name, email, password, address, phone);
-const url='https://mearn-deploy.onrender.com/api/v1/auth/Register';
+console.log(name,lname, email, password);
+const url='http://localhost:8080/api/v1/auth/register';
+console.log(url);
 try {
-const res = await axios.post(url, {name, email, password, address, phone})
+const res = await axios.post(url, {name, lname, email, password})
 console.log(res.data);
 if(res.data.success)
 {
@@ -32,8 +33,8 @@ console.log(error);
 return (
 <RegisterPage title="Register Ecommerce">
 <div className='register'>
-        <div class="v-stack gap-4">
-          <h1 class="h3">SIGN UP</h1>
+        <div className="v-stack gap-4">
+          <h1 className="h3">SIGN UP</h1>
           <p>Please fill in the information below:</p>
         </div>
 <form onSubmit={handleSubmit} className='w-50'>
@@ -41,7 +42,7 @@ return (
 <input type="text" placeholder='Enter your Name'  onChange={(e) => setName(e.target.value)} className="w-100 form-control" id="exampleInputName"  />
 </div>
 <div className="mb-3"> 
-<input type="text"  onChange={(e) => setName(e.target.value)} className="form-control" id="exampleInputName" placeholder='Enter your Name' />
+<input type="text"  onChange={(e) => setLname(e.target.value)} className="form-control" id="exampleInputName" placeholder='Enter your Name' />
 </div>
 <div className="mb-3"> 
 <input type="text" onChange={(e) => setEmail(e.target.value)} className="form-control" id="exampleInputName" placeholder='Email' />

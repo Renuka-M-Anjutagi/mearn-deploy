@@ -28,7 +28,7 @@ const Header = () => {
             <option>America</option>
           </select>
           
-          <NavLink to="/login" className="nav-link" href="#"> 
+          <NavLink to="/login" className="nav-link" href="/login"> 
           
           <FaRegUser style={{margin:"10px"}} /> 
         
@@ -41,33 +41,33 @@ const Header = () => {
     <div className="col-md-6 offset-md-3">
       
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">All painting</a>
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="container-fluid">
+    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="#">All painting</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/product">EXPLORE</a>
+        <li className="nav-item">
+          <a className="nav-link" href="/product">EXPLORE</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Abstract painting</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Abstract painting</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">3D MINIMALIST art</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">3D MINIMALIST art</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Set Of 2</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Set Of 2</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           About Us
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/policy">ourstory</a></li>
-            <li><a class="dropdown-item" href="/contact"> contactus</a></li>
-            <li><a class="dropdown-item" href="/blog">Blog</a></li>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a className="dropdown-item" href="/policy">ourstory</a></li>
+            <li><a className="dropdown-item" href="/contact"> contactus</a></li>
+            <li><a className="dropdown-item" href="/blog">Blog</a></li>
           </ul>
         </li>
       </ul>

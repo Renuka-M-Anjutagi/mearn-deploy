@@ -7,20 +7,19 @@ const Reset = () => {
  
          
   const [email, setEmail] = useState(" ");
-  const [password, setpassword] = useState(" ");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email);
-    const  url ='https://mearn-deploy.onrender.com/api/v1/auth/login/reset';
+    const  url ='http://localhost:8080/api/v1/auth/login/reset';
    
     try {
     const  res   = await axios.post(url, {email});
     console.log(res.data);
     if(res.data)
     {
-      navigate('/setpassword');
+      navigate('/reset-password');
       //console.log(res.data.success);
     }
     } catch (error) {
