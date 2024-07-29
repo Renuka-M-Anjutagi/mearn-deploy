@@ -146,4 +146,20 @@ export const resetPassword =  async(req,res) =>{
     res.send("Done");
 
  }
+
+ // Log out 
+
+export const logoutController = (req, res) =>{
+    try {
+        // clear the token cookie
+        res.clearCookie('token');
+
+        // return a success message
+        res.json({ message: 'Logout successful' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+
+}
+
 // export default {registerController};

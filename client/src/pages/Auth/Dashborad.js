@@ -1,10 +1,22 @@
-import React from 'react'
+import React,{useState} from 'react'
 import DashboradPage from '../../components/layout/DashboradPage'
+import Login from './Login';
 
 const Dashborad = () => {
+  const [isLoggedin, setIsLoggedin] = useState(false);
+  const logout = () => {
+    localStorage.removeItem("token-info");
+    setIsLoggedin(false);
+};
   return (
     <div>
-      <DashboradPage/>
+      {!isLoggedin ? (
+        <Login />
+      ):(
+        <DashboradPage />
+      
+      )
+    }
     </div>
   )
 }

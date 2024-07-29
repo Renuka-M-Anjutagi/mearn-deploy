@@ -7,8 +7,9 @@ const Login = () => {
 
   
   const [email, setEmail] = useState(" ");
-  const [password, setpassword] = useState(" ");
+  const [password, setPassword] = useState(" ");
   const navigate = useNavigate();
+  const [isLoggedin, setIsLoggedin] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,14 +18,35 @@ const Login = () => {
     try {
     const res = await axios.post(url, {email, password})
     console.log(res.data);
+    const userData = {
+      email,
+      password,
+  };
+  localStorage.setItem(
+      "token-info",
+      JSON.stringify(userData)
+  );
+  setIsLoggedin(true);
+
+  setEmail("");
+  setPassword("");
     if(res.data.success)
     {
-    navigate('/dashborad')
+      {!isLoggedin ? (
+        navigate('/dashborad')
+      ):(
+        navigate('/login')
+      )}
     }
     } catch (error) {
     console.log(error);
     }
     }
+
+    const logout = () => {
+      localStorage.removeItem("token-info");
+      setIsLoggedin(false);
+  };
   return (
   
     <LoginPage title="Login Ecommerce">
@@ -44,7 +66,7 @@ const Login = () => {
 
       <div className="mb-3">
     
-    <input type="password" className="form-control"  onChange={(e) => setpassword(e.target.value)}  placeholder="Enetr Your password"></input>
+    <input type="password" className="form-control"  onChange={(e) => setPassword(e.target.value)}  placeholder="Enetr Your password"></input>
     </div>
 
           <div className="outer">

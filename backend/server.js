@@ -5,7 +5,10 @@ const app = express();
 import morgan  from 'morgan';
 import connectDb from './db.js';
 import authRoutes from './routes/authRoute.js';
+//import proRoute from './routes/proRoute.js';
+import productRoute from './routes/productRoute.js';
 import cors from 'cors';
+
 
 // middleware
 const corsOptions = {
@@ -14,14 +17,17 @@ const corsOptions = {
 }
 
 dotenv.config()
-app.use(cors())
-app.use(express.json());
-app.use(morgan('dev'));
+
 
 
 //routes
-
+app.use(cors())
+app.use(express.json());
+app.use(morgan('dev'));
 app.use('/api/v1/auth', authRoutes);
+//app.use('/api/v1/auth', proRoute);
+app.use('/api/v1/auth', productRoute);
+
 connectDb();
 app.get('/', (req, res) =>{
     res.send("<h1>welcome to my Application</h1> <h2>CRUD Application<h2>")
@@ -30,8 +36,12 @@ app.get('/', (req, res) =>{
     // })
 });
 
+
+
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () =>{
     console.log('Applicatipn is running on port: ', PORT)
 })
+

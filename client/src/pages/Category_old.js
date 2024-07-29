@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ProductList from './ProductList';
-
-const Category = () => {
+import Menu from '../../src/components/layout/Header';
+const Category = (props) => { 
   
   const [loading, setLoading] = useState(false);
   const [productList, setProductList] = useState([]);
@@ -38,9 +38,11 @@ const Category = () => {
   const getCategories = async () => {
     setLoading(true);
 
-    await fetch('https://dummyjson.com/products/categories')
+    await fetch('http://localhost:3000/category/all')
     .then(res => res.json())
     .then(data => {
+
+      console.log(data)
         const arr = data.slice(0, 6);
         setCategories(arr); 
     })
@@ -98,6 +100,8 @@ const Category = () => {
                 </div>
             </div>
             <ProductList filteredProductList={fileredProductList} loading={loading} />
+
+            <Menu categoriesList={categories} loading={loading}  />
         </div>
     </div>
   )

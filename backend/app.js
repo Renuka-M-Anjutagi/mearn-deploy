@@ -15,7 +15,7 @@ app.use(cors());
 
 // connect MongoDB
 mongoose.connect(process.env.MONGO_URI).then(() => {
-    const PORT = process.env.PORT || 8080 || process.env.SERVER_APP_API;
+    const PORT = process.env.PORT || 8080;
     app.listen(PORT, () => {
         console.log(`App is Listening on PORT ${PORT}`);
     })
@@ -27,3 +27,4 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
 app.get("/", (req, res) => {
     res.status(201).json({message: "Connected to Backend!"});
 });
+

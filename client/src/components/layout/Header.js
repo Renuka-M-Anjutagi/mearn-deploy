@@ -4,6 +4,9 @@ import { FaRegUser } from "react-icons/fa";
 import { FaSistrix } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
 
+import Menu from './Menu';
+import AllCategory from './category/AllCategory';
+
 const Header = () => { 
   return (
   <>
@@ -28,7 +31,7 @@ const Header = () => {
             <option>America</option>
           </select>
           
-          <NavLink to="/login" className="nav-link" href="/login"> 
+          <NavLink to="/login" className="nav-link" href="#"> 
           
           <FaRegUser style={{margin:"10px"}} /> 
         
@@ -39,42 +42,8 @@ const Header = () => {
   </div>
   <div className="row">
     <div className="col-md-6 offset-md-3">
-      
-
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <div className="container-fluid">
-    <div className="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">All painting</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/product">EXPLORE</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Abstract painting</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">3D MINIMALIST art</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Set Of 2</a>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          About Us
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a className="dropdown-item" href="/policy">ourstory</a></li>
-            <li><a className="dropdown-item" href="/contact"> contactus</a></li>
-            <li><a className="dropdown-item" href="/blog">Blog</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+      <AllCategory />
+     
     </div>
   </div>
 </div>
@@ -84,4 +53,3 @@ const Header = () => {
 }
 
 export default Header
-
