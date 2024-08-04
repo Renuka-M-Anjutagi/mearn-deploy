@@ -5,7 +5,7 @@ const app = express();
 import morgan  from 'morgan';
 import connectDb from './db.js';
 import authRoutes from './routes/authRoute.js';
-//import proRoute from './routes/proRoute.js';
+import cartRoute from './routes/cartRoute.js';
 import productRoute from './routes/productRoute.js';
 import cors from 'cors';
 
@@ -25,7 +25,7 @@ app.use(cors())
 app.use(express.json());
 app.use(morgan('dev'));
 app.use('/api/v1/auth', authRoutes);
-//app.use('/api/v1/auth', proRoute);
+app.use('/api/v1/auth', cartRoute);
 app.use('/api/v1/auth', productRoute);
 
 connectDb();

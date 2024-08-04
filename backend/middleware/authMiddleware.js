@@ -1,5 +1,6 @@
 import JWT from 'jsonwebtoken';
 import userModel from '../models/userModel.js';
+import cart from '../models/cart.js';
 // protected route
 
 export const  requireSignIn = async (req, res, next) =>{
@@ -16,7 +17,7 @@ try {
 export const isAdmin  = async (req, res, next) =>
     {
         try {
-            const user = await userModel.findById(req.user._id)
+            const user = await userModel.findById(req.user._id,req.user.role)
             if(user.role !== 1)
             {
                 return res.status(401).send({
@@ -36,4 +37,5 @@ export const isAdmin  = async (req, res, next) =>
             })
         }
     }
+   
    

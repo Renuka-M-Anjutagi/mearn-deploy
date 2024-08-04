@@ -27,7 +27,7 @@ const AllCategory = () => {
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
       {categoryList.map((i) => {
-
+console.log(i.parentId);
 if (categoryList.parentId == null) {
   return <li class="nav-item">
   <a class="nav-link active" aria-current="page" href="#">{i.name}</a>
@@ -35,12 +35,13 @@ if (categoryList.parentId == null) {
 }else{
     return    <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    {i.name}
+    {categoryList.children.name}
+
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-      <li><a class="dropdown-item" href="/policy">ourstory</a></li>
-      <li><a class="dropdown-item" href="/contact"> contactus</a></li>
-      <li><a class="dropdown-item" href="/blog">Blog</a></li>
+      <li><a class="dropdown-item" href="/policy">  {i.children.name}</a></li>
+      <li><a class="dropdown-item" href="/contact">   {i.children.name}</a></li>
+      <li><a class="dropdown-item" href="/blog">  {i.children.name}</a></li>
     </ul>
   </li>
 }

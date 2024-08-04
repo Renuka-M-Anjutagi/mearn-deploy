@@ -23,7 +23,7 @@ function createCategories(categories,parentId  = null){
             _id:cate._id,
             name:cate.name,
             slug:cate.slug,
-            children: createCategories(categories, cate._id)
+            children: createCategories(categories, cate._id),
         });
     }
     return categoryList;
@@ -117,7 +117,7 @@ export const getCategories  = async (req, res) =>
                         categoryList
                     })
 
-                        //return categoryList;
+                        return categoryList;
                 }
                 
             
